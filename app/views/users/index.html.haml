@@ -1,10 +1,8 @@
 .wrapper
-  .header
-    .logo
-      = link_to root_path do
-        Rakusuku
-      = link_to edit_user_path(current_user) do
-        user edit
+  = render "layouts/header"
   .body
     .info
     .menu
+      .chat
+        = link_to posts_path do
+          chat画面へ
