@@ -1,0 +1,35 @@
+.posts-page
+  = render "layouts/header"
+  .group-main
+    .left-box
+      .new-group
+        =link_to "#" do
+          新規グループ作成
+      .joined-groups
+        .group
+          .group__name
+            全体グループ
+    .right-box
+      .current-group-info
+        全体グループ
+      %form.post-form
+      .posts
+        .post
+          .top
+            .top__left--user-avater
+              ■
+            .top__right
+              .top__right--user-name
+                佐藤 二郎
+              .top__right--datetime
+                2020/5/3 12:00
+          .middle
+            .post-content
+              今日はとてもいい天気ですね
+            .post-images
+            .looked-count
+              見ました
+          .bottom
+            .comment-link
+              = link_to "#" do
+                comment
