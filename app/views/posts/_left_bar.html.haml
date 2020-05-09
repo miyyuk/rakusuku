@@ -1,0 +1,9 @@
+.left_bar
+  .new-group
+    =link_to new_group_path do
+      新規グループ作成
+  .joined-groups
+    - current_user.groups.each do |group|
+      .group
+        .group__name
+          = group.name
