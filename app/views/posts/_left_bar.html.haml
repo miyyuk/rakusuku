@@ -5,5 +5,6 @@
   .joined-groups
     - current_user.groups.each do |group|
       .group
-        .group__name
-          = group.name
+        = link_to group_posts_path(group) do
+          .group__name
+            = group.name
