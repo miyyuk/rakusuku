@@ -6,12 +6,13 @@
         =link_to new_group_path do
           新規グループ作成
       .joined-groups
-        .group
-          .group__name
-            全体グループ
+        - current_user.groups.each do |group|
+          .group
+            .group__name
+              = group.name
     .right-box
       .current-group-info
-        全体グループ
+        仮グループ
       %form.post-form
       .posts
         .post
