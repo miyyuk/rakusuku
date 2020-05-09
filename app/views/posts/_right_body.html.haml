@@ -1,7 +1,15 @@
 .right_body
   .current-group-info
     仮グループ
-  %form.post-form
+  .post-form
+    .current-user__avater.avater
+    = form_with do |f|
+      .input-box
+        = f.text_area :content, class: 'input-box__content', placeholder: '投稿文を入力してください'
+        = f.label :image, class: 'input-box__image' do
+          = icon('fa', 'paperclip')
+          = f.file_field :image, class: 'input-box__image__file'
+        = f.submit '投稿', class: 'submit-btn'
   .posts
     .post
       .top
