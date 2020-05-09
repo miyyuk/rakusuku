@@ -1,0 +1,20 @@
+.post
+  .top
+    .top__left--user-avater.avater
+    .top__right
+      .top__right--user-name
+        = post.user.firstname
+        = post.user.lastname
+      .top__right--datetime
+        = post.created_at.strftime("%Y/%m/%d %H:%M")
+  .middle
+    -if post.content.present?
+      .post-content
+        = post.content
+    = image_tag post.image.url, class: 'post-images' if post.image.present?
+    .looked-count
+      見ました
+  .bottom
+    .comment-link
+      = link_to "#" do
+        comment
