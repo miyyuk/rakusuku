@@ -6,6 +6,9 @@ class PostsController < ApplicationController
     @posts = @group.posts.includes(:user)
   end
 
+  def show
+  end
+
   def create
     @post = @group.posts.new(post_params)
     if @post.save
