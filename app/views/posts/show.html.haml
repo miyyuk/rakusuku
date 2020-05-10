@@ -33,7 +33,7 @@
             oyaoya
         .post-form__inner.comment-form
           .current-user__avater.avater
-          = form_with model:[@group, @post] do |f|
+          = form_with model:[@group, @post, @comment] do |f|
             .input-box
               = f.text_area :content, class: 'input-box__content', placeholder: 'コメントを入力してください'
               .input-box__bottom
