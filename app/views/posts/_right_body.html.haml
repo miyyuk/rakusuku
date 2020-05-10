@@ -7,9 +7,9 @@
       .input-box
         = f.text_area :content, class: 'input-box__content', placeholder: '投稿文を入力してください'
         .input-box__bottom
-          = f.label :image, class: 'input-box__bottom__image' do
+          = f.label :files, class: 'input-box__bottom__files' do
             = icon('fa', 'paperclip')
-            = f.file_field :image, class: 'input-box__bottom__image__file'
+            = f.file_field :files, multiple: true, class: 'input-box__bottom__files__file'
           = f.submit '投稿', class: 'submit-btn'
   .posts
     =render @posts

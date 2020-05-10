@@ -4,5 +4,6 @@ class Post < ApplicationRecord
 
   validates :content, presence: true
 
-  mount_uploaders :images, ImageUploader
+  mount_uploaders :files, ImageUploader
+
 end

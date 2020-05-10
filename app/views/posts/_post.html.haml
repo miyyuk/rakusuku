@@ -8,10 +8,12 @@
       .top__right--datetime
         = post.created_at.strftime("%Y/%m/%d %H:%M")
   .middle
-    -if post.content.present?
-      .post-content
-        = post.content
-    = image_tag post.image.url, class: 'post-images' if post.image.present?
+    .post-content
+      = post.content
+    - if post.files.present?
+      .post-files
+        - post.files.each_index do |i|
+          = image_tag post.files[i].url, class: 'post-files__file'
     .looked-count
       見ました
   .bottom
