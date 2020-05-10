@@ -1,8 +1,8 @@
-.group-main {
+.chat-main {
   display: flex;
 }
 
-.left-box {
+.left_bar {
   width: 300px;
   height: calc(100vh - 50px);
   overflow: scroll;
@@ -22,7 +22,7 @@
 }
 
 
-.right-box {
+.right_body {
   width: 100%;
   .current-group-info {
     background-color: #f5f5f5;
@@ -32,7 +32,39 @@
   }
   .post-form {
     background-color: #fffaf0;
-    height: 200px;
+    margin: 12px 24px 24px;
+    padding: 10px;
+    resize: vertical;
+    min-height: 200px;
+    display: flex;
+    .input-box {
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      padding: 10px;
+      &__content {
+        flex-shrink: 0;
+        width: 100%;
+        resize: vertical;
+        min-height: 200px;
+        padding: 10px;
+      }
+      &__bottom {
+        &__files {
+          &__file {
+            display: none;
+          }
+        }
+        .submit-btn {
+          background-color: #dcdcdc;
+          height: 30px;
+          width: 100px;
+          padding: 0 30px;
+          color: #696969;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
   }
   .posts {
     margin: 24px;
@@ -42,6 +74,15 @@
       border: 1px solid #ccc;
       padding: 10px;
       margin: 0 20px 0;
+      .middle {
+        .post-files {
+          display: flex;
+          &__file {
+            height: 200px;
+            width: 200px;
+          }
+        }
+      }
     }
   }
 }

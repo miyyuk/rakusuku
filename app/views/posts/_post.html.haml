@@ -1,0 +1,22 @@
+.post
+  .top
+    .top__left--user-avater.avater
+    .top__right
+      .top__right--user-name
+        = post.user.firstname
+        = post.user.lastname
+      .top__right--datetime
+        = post.created_at.strftime("%Y/%m/%d %H:%M")
+  .middle
+    .post-content
+      = post.content
+    - if post.files.present?
+      .post-files
+        - post.files.each_index do |i|
+          = image_tag post.files[i].url, class: 'post-files__file'
+    .looked-count
+      見ました
+  .bottom
+    .comment-link
+      = link_to "#" do
+        comment
