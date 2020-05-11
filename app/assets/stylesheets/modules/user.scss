@@ -1,3 +1,15 @@
+.body {
+  padding: 24px 20%;
+}
+
+.timetable {
+  width: 100%;
+}
+
+.introduce {
+  width: 100%;
+}
+
 .account-page {
   .account-page__inner {
     width: 980px;
@@ -63,6 +75,7 @@
     }
 
     .field-input {
+      width: 100%;
       input {
         width: 100%;
         padding: 10px;

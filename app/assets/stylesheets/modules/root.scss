@@ -7,8 +7,10 @@
   color: white;
   height: 60px;
   width: 100%;
-  line-height: 60px;
-  text-align: center;
+  padding: 0 20%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .body {
@@ -17,9 +19,21 @@
   width: 100%;
 }
 
-.avater {
-  background-color: #87cefa;
+.current_user-block {
+  height: 60px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 0 20px;
+  align-items: center;
+  display: flex;
+}
+
+#avater {
   height: 30px;
   width: 30px;
   margin-right: 10px;
+}
+
+.current_user-avater {
+  margin-top: 5px;
 }
