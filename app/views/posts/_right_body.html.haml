@@ -4,7 +4,8 @@
   .group-posts
     .post-form
       .post-form__inner
-        .current-user__avater.avater
+        .current-user__avater
+          = image_tag current_user.avater.url, id: 'avater'
         .input-box
           = form_with model:[@group, @post] do |f|
             = f.text_area :content, class: 'input-box__content', placeholder: '投稿文を入力してください'
