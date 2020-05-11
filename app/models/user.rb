@@ -11,4 +11,7 @@ class User < ApplicationRecord
 
   validates :firstname, presence: true
   validates :lastname, presence: true
+
+  mount_uploader :avater, ImageUploader
+  mount_uploader :timetable, ImageUploader
 end

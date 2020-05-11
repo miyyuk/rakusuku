@@ -1,0 +1,7 @@
+.wrapper
+  = render "layouts/header"
+  .body
+    .timetable
+      = image_tag current_user.timetable.url
+    .profile
+      = current_user.introduce

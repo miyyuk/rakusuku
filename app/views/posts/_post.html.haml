@@ -1,6 +1,7 @@
 .post
   .top
-    .top__left--user-avater.avater
+    .top__left--user-avater
+      = image_tag post.user.avater.url, id: 'avater'
     .top__right
       .top__right--user-name
         = post.user.firstname

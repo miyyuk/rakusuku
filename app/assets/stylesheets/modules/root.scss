@@ -7,19 +7,34 @@
   color: white;
   height: 60px;
   width: 100%;
-  line-height: 60px;
-  text-align: center;
+  padding: 0 15%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .body {
   background-color: #f0f8ff;
   height: 100vh;
   width: 100%;
+  padding: 24px 15%;
 }
 
-.avater {
-  background-color: #87cefa;
+.current_user-block {
+  height: 60px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 0 20px;
+  align-items: center;
+  display: flex;
+}
+
+#avater {
   height: 30px;
   width: 30px;
   margin-right: 10px;
+}
+
+.current_user-avater {
+  margin-top: 5px;
 }
