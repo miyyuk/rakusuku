@@ -1,0 +1,7 @@
+class LooksController < ApplicationController
+  def create
+  end
+
+  def destroy
+  end
+end
