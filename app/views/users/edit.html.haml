@@ -10,17 +10,17 @@
               .field-label
                 = f.label :avater
               .field-input
-                = f.file_field :avater, autofocus: true
+                = f.file_field :avater
             .field
               .field-label
                 = f.label :firstname
               .field-input
-                = f.text_field :firstname, autofocus: true
+                = f.text_field :firstname
             .field
               .field-label
                 = f.label :lastname
               .field-input
-                = f.text_field :lastname, autofocus: true
+                = f.text_field :lastname
             .field
               .field-label
                 = f.label :email
@@ -30,6 +30,11 @@
               .field-label
                 = f.label :introduce
               .field-input.text_area
-                = f.text_area :introduce, autofocus: true
+                = f.text_area :introduce
+            .field
+              .field-label
+                = f.label :timetable
+              .field-input
+                = f.file_field :timetable, autofocus: true
             .actions
               = f.submit "Update", class: 'btn'
