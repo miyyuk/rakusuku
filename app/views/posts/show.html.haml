@@ -42,8 +42,8 @@
                   = comment.content
         .post-form__inner.comment-form
           .current-user__avater.avater
-          = form_with model:[@group, @post, @comment] do |f|
-            .input-box
+          .input-box
+            = form_with model:[@group, @post, @comment] do |f|
               = f.text_area :content, class: 'input-box__content', placeholder: 'コメントを入力してください'
               .input-box__bottom
                 = f.submit '投稿', class: 'submit-btn'
