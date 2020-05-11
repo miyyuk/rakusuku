@@ -26,11 +26,20 @@
         .comments
           .comments__count
             = icon('fa', 'comment-dots')
-            コメント２件
-          .comment
-            ohayou
-          .comment
-            oyaoya
+            コメント一覧
+          - @comments.each do |comment|
+            .comment
+              .top
+                .top__left--user-avater.avater
+                .top__right
+                  .top__right--user-name
+                    = comment.user.firstname
+                    = comment.user.lastname
+                  .top__right--datetime
+                    = comment.created_at.strftime("%Y/%m/%d %H:%M")
+              .middle
+                .post-content
+                  = comment.content
         .post-form__inner.comment-form
           .current-user__avater.avater
           = form_with model:[@group, @post, @comment] do |f|
