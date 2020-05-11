@@ -4,7 +4,7 @@
 
 .left_bar {
   width: 300px;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 60px);
   overflow: scroll;
   border-right: 1px solid #ccc;
   .new-group {
@@ -34,7 +34,7 @@
 }
 
 .group-posts {
-  height: calc(100vh - 110px);
+  height: calc(100vh - 120px);
   overflow: scroll;
 }
 
