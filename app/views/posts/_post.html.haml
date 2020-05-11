@@ -18,5 +18,6 @@
       見ました
   .bottom
     .comment-link
-      = link_to "#" do
-        comment
+      = link_to group_post_path(@group, post) do
+        = icon('fa', 'comment-dots')
+        コメントする

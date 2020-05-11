@@ -6,6 +6,12 @@ class PostsController < ApplicationController
     @posts = @group.posts.includes(:user)
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
+  end
+
   def create
     @post = @group.posts.new(post_params)
     if @post.save
