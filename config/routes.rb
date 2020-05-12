@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :groups do
     resources :posts do
-      resources :looks, only: [:create, :destroy]
+      resource :looks, only: [:create, :destroy]
       resources :comments, only: :create
     end
   end
