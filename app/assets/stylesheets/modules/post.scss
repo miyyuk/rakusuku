@@ -90,33 +90,35 @@
 .post {
   border: 1px solid #ccc;
   margin: 24px;
-  .top {
-    padding: 10px;
-    display: flex;
-    &__right {
-      &--user-name {
-        font-size: 14px;
-      }
-      &--datetime {
-        font-size: 6px;
-      }
+}
+
+.top {
+  padding: 10px;
+  display: flex;
+  &__right {
+    &--user-name {
+      font-size: 14px;
     }
-  }
-  .middle {
-    padding: 10px;
-    .post-files {
-      display: flex;
-      &__file {
-        height: 200px;
-        width: 200px;
-      }
+    &--datetime {
+      font-size: 6px;
     }
-  }
-  .bottom {
-    padding: 10px;
-    border-top: 1px solid #ccc;
-    height: 40px;
-    align-items: center;
-    text-align: center;
   }
 }
+.middle {
+  padding: 10px;
+  .post-files {
+    display: flex;
+    &__file {
+      height: 200px;
+      width: 200px;
+    }
+  }
+}
+.bottom {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  height: 40px;
+  align-items: center;
+  text-align: center;
+}
+

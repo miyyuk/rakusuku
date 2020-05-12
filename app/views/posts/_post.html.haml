@@ -15,8 +15,7 @@
       .post-files
         - post.files.each_index do |i|
           = image_tag post.files[i].url, class: 'post-files__file'
-    .looked-count
-      見ました
+    = render partial: 'looks/look', locals: { post: post }
   .bottom
     .comment-link
       = link_to group_post_path(@group, post) do

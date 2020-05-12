@@ -4,10 +4,12 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = @group.posts.includes(:user)
+    @looks = Look.new
   end
 
   def show
     @post = Post.find(params[:id])
+    @looks = Look.new
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
   end

@@ -5,48 +5,30 @@
     .right_body
       .current-group-info
         = @group.name
-      .post
-        .top
-          .top__left--user-avater
-            = image_tag @post.user.avater.url, id: 'avater'
-          .top__right
-            .top__right--user-name
-              = @post.user.firstname
-              = @post.user.lastname
-            .top__right--datetime
-              = @post.created_at.strftime("%Y/%m/%d %H:%M")
-        .middle
-          .post-content
-            = @post.content
-          - if @post.files.present?
-            .post-files
-              - @post.files.each_index do |i|
-                = image_tag @post.files[i].url, class: 'post-files__file'
-          .looked-count
-            見ました
-        .comments
-          .comments__count
-            = icon('fa', 'comment-dots')
-            コメント一覧
-          - @comments.each do |comment|
-            .comment
-              .top
-                .top__left--user-avater.avater
-                  = image_tag comment.user.avater.url, id: 'avater'
-                .top__right
-                  .top__right--user-name
-                    = comment.user.firstname
-                    = comment.user.lastname
-                  .top__right--datetime
-                    = comment.created_at.strftime("%Y/%m/%d %H:%M")
-              .middle
-                .post-content
-                  = comment.content
-        .post-form__inner.comment-form
-          .current-user__avater.avater
-            = image_tag current_user.avater.url, id: 'avater'
-          .input-box
-            = form_with model:[@group, @post, @comment] do |f|
-              = f.text_area :content, class: 'input-box__content', placeholder: 'コメントを入力してください'
-              .input-box__bottom
-                = f.submit '投稿', class: 'submit-btn'
+      = render partial: 'posts/post', locals: { post: @post }
+      .comments
+        .comments__count
+          = icon('fa', 'comment-dots')
+          コメント一覧
+        - @comments.each do |comment|
+          .comment
+            .top
+              .top__left--user-avater.avater
+                = image_tag comment.user.avater.url, id: 'avater'
+              .top__right
+                .top__right--user-name
+                  = comment.user.firstname
+                  = comment.user.lastname
+                .top__right--datetime
+                  = comment.created_at.strftime("%Y/%m/%d %H:%M")
+            .middle
+              .post-content
+                = comment.content
+      .post-form__inner.comment-form
+        .current-user__avater.avater
+          = image_tag current_user.avater.url, id: 'avater'
+        .input-box
+          = form_with model:[@group, @post, @comment] do |f|
+            = f.text_area :content, class: 'input-box__content', placeholder: 'コメントを入力してください'
+            .input-box__bottom
+              = f.submit '投稿', class: 'submit-btn'
