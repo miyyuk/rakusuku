@@ -11,6 +11,10 @@ class User < ApplicationRecord
   has_many :looks
   has_many :looked_posts, through: :looks, source: :post
 
+  def already_looked?(post)
+    self.looks.exists?(post_id: post.id)
+  end
+
   validates :firstname, presence: true
   validates :lastname, presence: true
 
