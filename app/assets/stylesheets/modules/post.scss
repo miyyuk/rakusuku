@@ -5,7 +5,6 @@
 .left_bar {
   width: 300px;
   height: calc(100vh - 60px);
-  overflow: scroll;
   border-right: 1px solid #ccc;
   .new-group {
     height: 60px;
@@ -16,6 +15,7 @@
     .group {
       border-bottom: 1px solid #ccc;
       padding: 10px;
+      overflow: scroll;
       height: 70px;
     }
   }
@@ -67,7 +67,7 @@
       &__files {
         margin-right: 20px;
         &__file {
-          display: none;
+          // display: none;
         }
       }
       .submit-btn {

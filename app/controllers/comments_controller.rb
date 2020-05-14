@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       redirect_to group_post_path(id: @post.id)
     else
       # errorメッセージの表示を追加予定
-      @comments = @post.comments.includes(:user)
+      @comments = @post.comments.includes(:user).order("created_at DESC")
       redirect_to group_post_path(id: @post.id)
     end
   end
