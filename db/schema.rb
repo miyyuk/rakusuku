@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_12_070145) do
+ActiveRecord::Schema.define(version: 2020_05_13_052750) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 2020_05_12_070145) do
     t.index ["user_id"], name: "index_looks_on_user_id"
   end
 
+  create_table "post_files", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "file"
+    t.bigint "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_files_on_post_id"
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content", null: false
     t.bigint "group_id"
@@ -55,7 +63,6 @@ ActiveRecord::Schema.define(version: 2020_05_12_070145) do
     t.date "release_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "files"
     t.integer "looked_count"
     t.index ["group_id"], name: "index_posts_on_group_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -85,6 +92,7 @@ ActiveRecord::Schema.define(version: 2020_05_12_070145) do
   add_foreign_key "group_users", "users"
   add_foreign_key "looks", "posts"
   add_foreign_key "looks", "users"
+  add_foreign_key "post_files", "posts"
   add_foreign_key "posts", "groups"
   add_foreign_key "posts", "users"
 end
