@@ -7,12 +7,13 @@
         .current-user__avater
           = image_tag current_user.avater.url, id: 'avater'
         .input-box
-          = form_with model:[@group, @post] do |f|
+          = form_with model:[@group, @post], url: group_posts_path do |f|
             = f.text_area :content, class: 'input-box__content', placeholder: '投稿文を入力してください'
             .input-box__bottom
-              = f.label :files, class: 'input-box__bottom__files' do
-                = icon('fa', 'paperclip')
-                = f.file_field :files, multiple: true, class: 'input-box__bottom__files__file'
+              .input-box__bottom__files
+                = f.fields_for :post_files do |i|
+                  -# = icon('fa', 'paperclip')
+                  = i.file_field :file, class: 'input-box__bottom__files__file'
               = f.submit '投稿', class: 'submit-btn'
     .posts
       = render @posts

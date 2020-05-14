@@ -11,10 +11,12 @@
   .middle
     .post-content
       = post.content
-    - if post.files.present?
-      .post-files
-        - post.files.each_index do |i|
-          = image_tag post.files[i].url, class: 'post-files__file'
+    - if post.post_files.present?
+      - post.post_files.ids.each do |id|
+        = id
+    -#   .post-files
+    -#     - post_file.each do |file|
+    -#       = image_tag file.url, class: 'post-files__file'
     = render partial: 'looks/look', locals: { post: post }
   .bottom
     .comment-link
