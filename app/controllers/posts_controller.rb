@@ -3,8 +3,9 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    4.times{ @post.post_files.build }
+    @post_file = @post.post_files.build
     @posts = @group.posts.includes(:user).order("created_at DESC")
+    # @post_files = @post.post_files.includes(:post)
     @looks = Look.new
   end
 
@@ -16,18 +17,25 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      redirect_to group_posts_path(@group)
-    else
-      @posts = @group.posts.includes(:user).order("created_at DESC")
-      render :index
-    end
+    @post = @group.posts.new(post_params)
+      if @post.save
+        if params[:post_files].present?
+          params[:post_files]['file'].each do |a|
+            @post_file = @post.post_files.create!(file: a, post_id: @post.id)
+          end
+        end
+        respond_to do |format|
+          format.json
+        end
+      else
+        @posts = @group.posts.includes(:user).order("created_at DESC")
+        render :index
+      end
   end
 
   private
   def post_params
-    params.require(:post).permit(:content, post_files_attributes: [:file]).merge(user_id: current_user.id, group_id: params[:group_id])
+    params.require(:post).permit(:content, post_files_attributes: [:file]).merge(user_id: current_user.id)
   end
 
   def set_group
