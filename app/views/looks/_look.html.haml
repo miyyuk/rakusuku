@@ -4,6 +4,6 @@
     = post.looked_count
   .look-btn
     - if current_user.already_looked?(post)
-      = button_to '見ましたを解除', group_post_looks_path(@group, post), method: :delete, id: 'look-btn#{post.id}', remote: true
+      = button_to '見ましたを解除', group_post_looks_path(@group, post), method: :delete, id: 'look-btn#{post.id}'
     - else
-      = button_to '見ました', group_post_looks_path(@group, post), id: 'look-btn#{post.id}', remote: true
+      = button_to '見ました', group_post_looks_path(@group, post), id: 'look-btn#{post.id}'
