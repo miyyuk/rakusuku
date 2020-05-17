@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
   def index
+    @users = User.search(params[:keyword], current_user.id)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def show
-  end
-
-  def new
-  end
-
-  def create
   end
 
   def edit
@@ -20,9 +19,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
   end
 
   private
