@@ -1,5 +1,6 @@
 .comments {
   width: 100%;
+  padding: 0 0 40px;
   &__count {
     height: 40px;
     line-height: 40px;
@@ -12,4 +13,9 @@
 
 .comment {
   border-bottom: 1px solid #ccc;
+}
+
+.post-detail {
+  height: calc(100vh - 120px);
+  overflow: scroll;
 }
