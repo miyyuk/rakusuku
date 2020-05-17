@@ -10,7 +10,7 @@
         = post.created_at.strftime("%Y/%m/%d %H:%M")
   .middle
     .post-content
-      = post.content
+      = simple_format(post.content)
     - if post.post_files.present?
       .post-files
         - post.post_files.each do |file|
@@ -19,7 +19,8 @@
             = file
     = render partial: 'looks/look', locals: { post: post }
   .bottom
-    .comment-link
-      = link_to group_post_path(@group, post) do
-        = icon('fa', 'comment-dots')
-        コメントする
+    - if @comments.present?
+      = @comments.length
+    = link_to group_post_path(@group, post), class: 'comment-link' do
+      = icon('fa', 'comment-dots')
+      コメントする

@@ -1,10 +1,7 @@
 .left_bar
-  .new-group
-    =link_to new_group_path do
-      新規グループ作成
+  =link_to new_group_path, class: 'new-group' do
+    新規グループ作成
   .joined-groups
     - current_user.groups.each do |group|
-      .group
-        = link_to group_posts_path(group) do
-          .group__name
-            = group.name
+      = link_to group_posts_path(group), class: 'group' do
+        = group.name
