@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def create
   end
-  
+
   def edit
   end
 
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
   end
 

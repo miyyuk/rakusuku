@@ -2,38 +2,33 @@
   = render "layouts/header"
   .body
     #account-page.account-page
-      .account-page__inner.clearfix
-        .account-page__inner--left.account-page__header
-        .account-page__inner--right.user-form
+      .account-page__inner
+        .user-form
           = form_for(current_user) do |f|
             .field
               .field-label
-                = f.label :avater
+                = f.label "プロフィール写真"
               .field-input
                 = f.file_field :avater
             .field
               .field-label
-                = f.label :firstname
+                = f.label "氏名"
               .field-input
                 = f.text_field :firstname
-            .field
-              .field-label
-                = f.label :lastname
-              .field-input
                 = f.text_field :lastname
             .field
               .field-label
-                = f.label :email
+                = f.label "メールアドレス"
               .field-input
                 = f.email_field :email
             .field
               .field-label
-                = f.label :introduce
+                = f.label "自己紹介文"
               .field-input.text_area
                 = f.text_area :introduce
             .field
               .field-label
-                = f.label :timetable
+                = f.label "時間割登録"
               .field-input
                 = f.file_field :timetable, autofocus: true
             .actions
