@@ -1,0 +1,40 @@
+= form_for group do |f|
+  - if group.errors.any?
+    .group-form__errors
+      %h2= "#{group.errors.full_messages.count}件のエラーが発生しました。"
+      %ul
+        - group.errors.full_messages.each do |message|
+          %li= message
+  .group-form__field
+    .group-form__field--left
+      = f.label :'グループ名', class: 'group-form__label'
+    .group-form__field--right
+      = f.text_field :name, class: 'group_name group-form__input', placeholder: 'グループ名を入力してください'
+  .group-form__field
+    .group-form__field--left
+      %label.group-form__label{:for => "group_チャットメンバーを追加"} メンバーを追加
+    .group-form__field--right
+      .group-form__search
+        %input#user-search-field.group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+      #user-search-result
+
+  .group-form__field
+    .group-form__field--left
+      %label.group-form__label{:for => "group_チャットメンバー"} メンバー
+    .group-form__field--right
+      #group-users.js-add-user
+        .group-user.js-member
+          %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
+            %p.group-user__name= current_user.name
+
+        - group.users.each do |user|
+          - if current_user.name != user.name
+            .group-user.js-member
+              %input{name: "group[user_ids][]", type: "hidden", value: user.id, class: 'already-added-user'}
+                %p.group-user__name
+                  = user.name
+                %a.user-search-remove.group-user__btn.group-user__btn--remove.js-remove-btn
+                  削除
+
+  .group-form__field
+    = f.submit class: 'group-form__action-btn'

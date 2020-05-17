@@ -1,4 +1,6 @@
-=form_for @group do |f|
-  = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
-  = f.collection_check_boxes :user_ids, User.all, :id, :firstname
-  = f.submit "Save", class: "chat-group-form__action-btn"
+.wrapper
+  = render "layouts/header"
+  .group-body
+    .chat-group-form
+      %h1 新規グループ作成
+      = render partial: 'form', locals: { group: @group }

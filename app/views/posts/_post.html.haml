@@ -4,8 +4,7 @@
       = image_tag post.user.avater.url, id: 'avater'
     .top__right
       .top__right--user-name
-        = post.user.firstname
-        = post.user.lastname
+        = post.user.name
       .top__right--datetime
         = post.created_at.strftime("%Y/%m/%d %H:%M")
   .middle

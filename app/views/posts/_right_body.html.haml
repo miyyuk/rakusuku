@@ -1,6 +1,8 @@
 .right_body
-  .current-group-info
+  .current-group
     = @group.name
+    =link_to edit_group_path(@group), class: 'current-group__menu' do
+      編集
   .group-posts
     .post-form
       .post-form__inner

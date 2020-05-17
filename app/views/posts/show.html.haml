@@ -17,8 +17,7 @@
                 = image_tag comment.user.avater.url, id: 'avater'
               .top__right
                 .top__right--user-name
-                  = comment.user.firstname
-                  = comment.user.lastname
+                  = comment.user.name
                 .top__right--datetime
                   = comment.created_at.strftime("%Y/%m/%d %H:%M")
             .middle

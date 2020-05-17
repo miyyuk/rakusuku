@@ -8,8 +8,7 @@
         .current_user-avater.avater
           = image_tag current_user.avater.url, id: 'avater'
         .current_user-name
-          = current_user.firstname
-          = current_user.lastname
+          = current_user.name
     .user-path
       .menu-icon
         = link_to edit_user_path(current_user), class: 'user-menu' do
