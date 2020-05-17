@@ -1,10 +1,21 @@
 .header
-  .logo
+  .logo-block
     = link_to root_path do
-      Rakusuku
-  .current_user-block
-    .current_user-avater.avater
-      = image_tag current_user.avater.url, id: 'avater'
-    = link_to user_path(current_user) do
-      = current_user.firstname
-      = current_user.lastname
+      = image_tag "logo.png", id: "logo"
+  .user-session
+    .current_user-block
+      = link_to user_path(current_user), class: 'current_user-info' do
+        .current_user-avater.avater
+          = image_tag current_user.avater.url, id: 'avater'
+        .current_user-name
+          = current_user.firstname
+          = current_user.lastname
+    .user-path
+      .menu-icon
+        = link_to edit_user_path(current_user), class: 'user-menu' do
+          = icon('fas', 'cog')
+          %h5 編集
+      .menu-icon
+        = link_to destroy_user_session_path, method: :delete, class: 'user-menu' do
+          = icon('fa', 'sign-out-alt')
+          %h5 ログアウト
