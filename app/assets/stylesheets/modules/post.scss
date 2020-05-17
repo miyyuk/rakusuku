@@ -1,10 +1,10 @@
 .chat-main {
   display: flex;
+  height: calc(100vh - 60px);
 }
 
 .left_bar {
   width: 300px;
-  height: calc(100vh - 60px);
   border-right: 1px solid #ccc;
   .new-group {
     height: 60px;
@@ -150,13 +150,14 @@
 .bottom {
   background-color: #f0f0f0;
   border-top: 1px solid #ccc;
-  height: 40px;
-  align-items: center;
-  text-align: center;
   .comment-link {
+    display: inline-block;
     padding: 10px;
     height: 40px;
+    width: 100%;
     color: #007bbb;
+    align-items: center;
+    text-align: center;
   }
 }
 

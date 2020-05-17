@@ -1,5 +1,6 @@
 $(function () {
   function buildHTML(post) {
+    var content = post.content.replace(/\n|\r\n|\r/g, '<br>');
     var html =
       `<div class="post">
         <div class="top">
@@ -8,8 +9,7 @@ $(function () {
           </div>
           <div class="top__right">
             <div class="top__right--user-name">
-              ${ post.user_firstname}
-              ${ post.user_lastname}
+              ${ post.user_name}
             </div>
             <div class="top__right--datetime">
               ${ post.created_at}
@@ -18,7 +18,7 @@ $(function () {
         </div>
         <div class="middle">
           <div class="post-content">
-            ${ post.content}
+            ${ content}
           </div>
           <div class="post-files">
             ${ post.post_files}
@@ -26,18 +26,18 @@ $(function () {
           <div class="look">
             <div class="looked-count">
               <i class="fa fa-check"></i>
+              0 人
             </div>
             <div class="look-btn">
               <form class="button_to" method="post" action="${ post.looks_link}" data-remote="true"><input id="look-btn#{post.id}" type="submit" value="見ました"></form>
             </div>
           </div>
-          <div class="bottom">
-            <div class="comment-link">
-              <a href="${ post.post_link}"><i class="fa fa-comment-dots"></i>
-                コメントする
-              </a>
-            </div>
-          </div>
+        </div>
+        <div class="bottom">
+          <a class="comment-link" href="${ post.post_link}"><i class="fa fa-comment-dots"></i>
+            コメントする
+          </a>
+        </div>
       </div>`
     return html;
   }

@@ -3,31 +3,54 @@
   .chat-main
     = render "posts/left_bar"
     .right_body
-      .current-group-info
+      .current-group
         = @group.name
-      = render partial: 'posts/post', locals: { post: @post }
-      .comments
-        .comments__count
-          = icon('fa', 'comment-dots')
-          コメント一覧
-        - @comments.each do |comment|
-          .comment
-            .top
-              .top__left--user-avater.avater
-                = image_tag comment.user.avater.url, id: 'avater'
-              .top__right
-                .top__right--user-name
-                  = comment.user.name
-                .top__right--datetime
-                  = comment.created_at.strftime("%Y/%m/%d %H:%M")
-            .middle
-              .post-content
-                = simple_format(comment.content)
-      .post-form__inner.comment-form
-        .current-user__avater.avater
-          = image_tag current_user.avater.url, id: 'avater'
-        .input-box
-          = form_with model:[@group, @post, @comment] do |f|
-            = f.text_area :content, class: 'input-box__content', placeholder: 'コメントを入力してください'
-            .input-box__bottom
-              = f.submit '投稿', class: 'submit-btn'
+      .post-detail
+        .post
+          .top
+            .top__left--user-avater
+              = image_tag @post.user.avater.url, id: 'avater'
+            .top__right
+              .top__right--user-name
+                = @post.user.name
+              .top__right--datetime
+                = @post.created_at.strftime("%Y/%m/%d %H:%M")
+          .middle
+            .post-content
+              = simple_format(@post.content)
+            - if @post.post_files.present?
+              .post-files
+                - @post.post_files.each do |file|
+                  .post-files__file
+                    ファイルは存在している？
+                    = file
+            = render partial: 'looks/look', locals: { post: @post }
+        .post-form__inner.comment-form
+          .current-user__avater.avater
+            = image_tag current_user.avater.url, id: 'avater'
+          .input-box
+            = form_for [@group, @post, @comment] do |f|
+              = f.text_area :content, class: 'input-box__content', placeholder: 'コメントを入力してください'
+              .input-box__bottom
+                = f.submit '投稿', class: 'submit-btn'
+        .comment-list
+          .comments__count
+            = icon('fa', 'comment-dots')
+            コメント一覧
+            - if @post.comments.present?
+              = ",  #{@post.comments.length}件"
+          .comments
+            - @comments.each do |comment|
+              .comment
+                .top
+                  .top__left--user-avater.avater
+                    = image_tag comment.user.avater.url, id: 'avater'
+                  .top__right
+                    .top__right--user-name
+                      = comment.user.name
+                    .top__right--datetime
+                      = comment.created_at.strftime("%Y/%m/%d %H:%M")
+                .middle
+                  .post-content
+                    = simple_format(comment.content)
+

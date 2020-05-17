@@ -18,8 +18,8 @@
             = file
     = render partial: 'looks/look', locals: { post: post }
   .bottom
-    - if @comments.present?
-      = @comments.length
     = link_to group_post_path(@group, post), class: 'comment-link' do
       = icon('fa', 'comment-dots')
       コメントする
+      - if post.comments.present?
+        = ",  #{post.comments.length}件"

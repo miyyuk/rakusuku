@@ -2,6 +2,10 @@
   .logo-block
     = link_to root_path do
       = image_tag "logo.png", id: "logo"
+  .today
+    - require "date"
+    - d = Date.today
+    = "#{ d.month }/#{ d.day } (#{ %w(日 月 火 水 木 金 土)[d.wday] })"
   .user-session
     .current_user-block
       = link_to user_path(current_user), class: 'current_user-info' do
