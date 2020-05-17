@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'ヒラギノ角ゴ ProN W3';
+  font-family: 'Hiragino Kaku Gothic Pro';
 }
 
 a {
@@ -8,22 +8,22 @@ a {
   display: block;
 }
 
-.info {
-  height: 300px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
 .header {
   background-color: #214d7f;
-  color: white;
+  color: #fff;
   height: 60px;
   width: 100%;
   padding: 0 15%;
   align-items: center;
   display: flex;
   justify-content: space-between;
+}
+
+.body {
+  background-color: #f0f8ff;
+  height: 100vh;
+  width: 100%;
+  padding: 24px 15%;
 }
 
 .logo-block {
@@ -36,49 +36,47 @@ a {
   font-size: 0;
 }
 
-.body {
-  background-color: #f0f8ff;
-  height: 100vh;
-  width: 100%;
-  padding: 24px 15%;
+.today {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .user-session {
   display: flex;
-}
 
-.current_user-block {
-  height: 60px;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding: 0 20px;
-  .current_user-info {
+  .current_user-block {
     height: 60px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 0 20px;
+    .current_user-info {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      .current_user-name {
+        color: white;
+      }
+    }
+  }
+
+  .user-path {
     display: flex;
-    align-items: center;
-    .current_user-name {
+    .user-menu {
+      height: 60px;
+      width: 60px;
       color: white;
+      font-size: 20px;
+      text-align: center;
+      padding-top: 15px;
+      h5 {
+        font-size: 1px;
+      }
     }
   }
-}
 
-.user-path {
-  display: flex;
-  .user-menu {
-    height: 60px;
-    width: 60px;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    padding-top: 15px;
-    h5 {
-      font-size: 1px;
-    }
+  .current_user-block:hover {
+    background-color: #1b629f;
   }
-}
-
-.current_user-block:hover {
-  background-color: #1b629f;
 }
 
 #avater {
@@ -90,4 +88,11 @@ a {
 
 .current_user-avater {
   margin-top: 5px;
+}
+
+.info {
+  height: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
