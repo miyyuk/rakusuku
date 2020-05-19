@@ -13,9 +13,7 @@
     - if post.post_files.present?
       .post-files
         - post.post_files.each do |file|
-          .post-files__file
-            ファイルは存在している？
-            = file
+          = image_tag file.file.url, class: 'post-files__file'
     = render partial: 'looks/look', locals: { post: post }
   .bottom
     = link_to group_post_path(@group, post), class: 'comment-link' do

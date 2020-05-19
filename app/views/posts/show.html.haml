@@ -21,16 +21,14 @@
             - if @post.post_files.present?
               .post-files
                 - @post.post_files.each do |file|
-                  .post-files__file
-                    ファイルは存在している？
-                    = file
+                  = image_tag file.file.url, class: 'post-files__file'
             = render partial: 'looks/look', locals: { post: @post }
         .post-form__inner.comment-form
           .current-user__avater.avater
             = image_tag current_user.avater.url, id: 'avater'
           .input-box
             = form_for [@group, @post, @comment] do |f|
-              = f.text_area :content, class: 'input-box__content', placeholder: 'コメントを入力してください'
+              = f.text_area :content, id: 'textarea', class: 'input-box__content', placeholder: 'コメントを入力してください'
               .input-box__bottom
                 = f.submit '投稿', class: 'submit-btn'
         .comment-list
