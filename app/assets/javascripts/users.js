@@ -42,10 +42,10 @@ $(function () {
     })
       .done(function (users) {
         $("#user-search-result").empty();
-        var addedUserId = $(".already-added-user").attr('value');
+        var addedUserIds = $(".already-added-user").attr('value');
         if (users.length !== 0) {
           users.forEach(function (user) {
-            if (user.id && !addedUserId) {
+            if (user.id && user.id != addedUserIds) {
               addUser(user);
             }
           });
