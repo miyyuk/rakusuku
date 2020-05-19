@@ -1,11 +1,10 @@
 .wrapper
   .user-body
     = image_tag "user-session-logo.png", class: 'user-session-logo'
-    #account-page.account-page
+    .account-page
       .account-page__inner
         .user-form
           = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-            = devise_error_messages!
             .field
               .field-label
                 = f.label "氏名"

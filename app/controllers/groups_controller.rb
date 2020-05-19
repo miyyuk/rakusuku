@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = current_user.groups.all
+    @groups = current_user.groups.order("name ASC")
   end
 
   def new
@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
   def update
     @group = Group.find(params[:id])
     if @group.update(group_params)
-      redirect_to group_posts_path
+      redirect_to group_posts_path(@group)
     else
       render :edit
     end

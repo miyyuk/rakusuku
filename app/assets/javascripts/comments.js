@@ -28,6 +28,16 @@ $(function () {
     return html;
   }
 
+  $(document).on('change keyup keydown paste cut',
+    '#textarea', function () {
+      if ($(this).outerHeight() > this.scrollHeight) {
+        $(this).height(1)
+      }
+      while ($(this).outerHeight() < this.scrollHeight) {
+        $(this).height($(this).height() + 1)
+      }
+    });
+
   $('#new_comment').on('submit', function (e) {
     e.preventDefault()
     var formData = new FormData(this);

@@ -1,8 +1,14 @@
 .wrapper
   = render "layouts/header"
   .body
-    .info
-    .menu
-      .chat
-        = link_to groups_path do
-          chat画面へ
+    .today-info
+      = icon('fa', 'thumbtack')
+      本日の予定
+      .infomations
+    .menu-list
+      .menu
+        .menu__block
+          = link_to groups_path, class: 'menu__block__icon' do
+            = icon('fa', 'users')
+        .menu__text
+          グループチャット

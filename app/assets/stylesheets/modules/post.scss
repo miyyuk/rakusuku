@@ -50,6 +50,13 @@
     font-size: 20px;
     display: flex;
     justify-content: space-between;
+    .group-info {
+      display: flex;
+      .member-count {
+        font-size: 14px;
+        margin: auto 30px;
+      }
+    }
     &__menu {
       font-size: 12px;
       color: #214d7f;
@@ -92,7 +99,6 @@
       &__files {
         margin-right: 20px;
         &__file {
-          // display: none;
         }
       }
       .submit-btn {
@@ -141,9 +147,11 @@
     display: flex;
     margin-bottom: 10px;
     &__file {
-      font-size: 5px;
-      height: 200px;
-      width: 200px;
+      width: 150px;
+      height: 150px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+
     }
   }
 }
@@ -163,4 +171,8 @@
 
 .bottom:hover {
   background-color: #c1e4e9;
+}
+
+img {
+  object-fit: contain;
 }
