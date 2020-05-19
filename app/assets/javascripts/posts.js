@@ -20,9 +20,6 @@ $(function () {
           <div class="post-content">
             ${ content}
           </div>
-          <div class="post-files">
-            ${ post.post_files}
-          </div>
           <div class="look">
             <div class="looked-count">
               <i class="fa fa-check"></i>
@@ -41,6 +38,16 @@ $(function () {
       </div>`
     return html;
   }
+
+  $(document).on('change keyup keydown paste cut',
+    '#textarea', function () {
+      if ($(this).outerHeight() > this.scrollHeight) {
+        $(this).height(1)
+      }
+      while ($(this).outerHeight() < this.scrollHeight) {
+        $(this).height($(this).height() + 1)
+      }
+    });
 
   $('#new_post').on('submit', function (e) {
     e.preventDefault()
