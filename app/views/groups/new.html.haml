@@ -1,6 +1,5 @@
-.wrapper
-  = render "layouts/header"
-  .group-body
-    .group-form
-      %h1 新規グループ作成
-      = render partial: 'form', locals: { group: @group }
+= render "layouts/header"
+.body
+  .group-form
+    %h1 新規グループ作成
+    = render partial: 'form', locals: { group: @group }

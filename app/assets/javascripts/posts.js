@@ -4,9 +4,7 @@ $(function () {
     var html =
       `<div class="post">
         <div class="top">
-          <div class="top__left--user-avater">
-            <img src="${ post.user_avater}" id="avater">
-          </div>
+          <img id="avater" src="${ post.user_avater}">
           <div class="top__right">
             <div class="top__right--user-name">
               ${ post.user_name}

@@ -1,0 +1,9 @@
+.chat-page {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+.post {
+  border: 1px solid #ccc;
+  margin: 24px;
+}

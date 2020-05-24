@@ -1,25 +1,21 @@
 .right_body
-  .current-group
-    .group-info
+  .current_group
+    .current_group__left
       = @group.name
-      .member-count
+      .current_group__left__member
         = "メンバー：#{@group.users.length}人"
-    =link_to edit_group_path(@group), class: 'current-group__menu' do
+    =link_to edit_group_path(@group), class: 'current_group__right' do
       編集
-  .group-posts
+  .scroll-show
     .post-form
-      .post-form__inner
-        .current-user__avater
-          = image_tag current_user.avater.url, id: 'avater'
-        .input-box
-          = form_for [@group, @post] do |f|
-            = f.text_area :content, id: 'textarea', class: 'input-box__content', placeholder: '投稿文を入力してください'
-            .input-box__bottom
-              .input-box__bottom__files
-                = f.fields_for :post_files do |i|
-                  = i.file_field :file, multiple: true, name: "post_files[file][]"
-                  -# = icon('fa', 'paperclip')
-                  -# = i.file_field :file, class: 'input-box__bottom__files__file'
-              = f.submit '投稿', class: 'submit-btn'
+      = image_tag current_user.avater.url, id: 'avater'
+      .input-box
+        = form_for [@group, @post] do |f|
+          = f.text_area :content, id: 'textarea', class: 'input-box__content', placeholder: '投稿文を入力してください'
+          .input-box__bottom
+            .input-box__bottom__files
+              = f.fields_for :post_files do |i|
+                = i.file_field :file, multiple: true, name: "post_files[file][]"
+            = f.submit '投稿', class: 'submit-btn'
     .posts
       = render @posts

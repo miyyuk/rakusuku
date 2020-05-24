@@ -1,0 +1,31 @@
+.left_bar {
+  width: 300px;
+  border-right: 1px solid #ccc;
+  .group-new {
+    height: 60px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: black;
+    text-align: center;
+    line-height: 40px;
+  }
+  .group-new:hover {
+    background-color: #c1e4e9;
+  }
+
+  .joined-groups {
+    overflow: scroll;
+    .group {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 20px;
+      height: 70px;
+      width: 300px;
+      color: black;
+      font-size: 18px;
+      line-height: 50px;
+    }
+    .group:hover {
+      background-color: #c1e4e9;
+    }
+  }
+}

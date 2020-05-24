@@ -1,32 +1,28 @@
-.wrapper
-  .user-body
-    = image_tag "user-session-logo.png", class: 'user-session-logo'
-    .account-page
-      .account-page__inner
-        .user-form
-          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-            .field
-              .field-label
-                = f.label "氏名"
-              .field-input.field-name
-                = f.text_field :firstname, placeholder: '氏', id: 'input-name', autofocus: true
-                = f.text_field :lastname, placeholder: '名', id: 'input-name'
-            .field
-              .field-label
-                = f.label "メールアドレス"
-              .field-input
-                = f.email_field :email
-            .field
-              .field-label
-                = f.label "パスワード"
-                %i (英数字8文字以上)
-              .field-input
-                = f.password_field :password, autocomplete: "off"
-            .field
-              .field-label
-                = f.label "パスワード（確認用）"
-              .field-input
-                = f.password_field :password_confirmation, autocomplete: "off"
-            .actions
-              = f.submit "新規ユーザー登録", class: 'btn'
-        = render "devise/shared/links"
+.devise-session
+  = image_tag "devise-session-logo.png", class: 'devise-session__logo'
+  .user-form
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .field
+        .field__label
+          = f.label "氏名"
+        .field__input
+          = f.text_field :firstname, placeholder: '氏', autofocus: true
+          = f.text_field :lastname, placeholder: '名'
+      .field
+        .field__label
+          = f.label "メールアドレス"
+        .field__input
+          = f.email_field :email
+      .field
+        .field__label
+          = f.label "パスワード"
+          %i (英数字8文字以上)
+        .field__input
+          = f.password_field :password, autocomplete: "off"
+      .field
+        .field__label
+          = f.label "パスワード（確認用）"
+        .field__input
+          = f.password_field :password_confirmation, autocomplete: "off"
+      = f.submit "新規ユーザー登録", class: 'btn'
+    = render "devise/shared/links"

@@ -1,9 +1,8 @@
-.wrapper
-  = render "layouts/header"
-  .group-body
-    .chat-group-form
-      %h1 グループ編集
-      = render partial: 'form', locals: { group: @group }
-      .group-form__field
-        = link_to group_path(@group), method: :delete, class: 'group-destroy' do
-          グループを削除する
+= render "layouts/header"
+.body
+  .group-form
+    %h1 グループ編集
+    = render partial: 'form', locals: { group: @group }
+    .field
+      = link_to group_path(@group), method: :delete, class: 'field__destroy' do
+        グループを削除する

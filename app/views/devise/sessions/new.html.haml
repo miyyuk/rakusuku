@@ -1,21 +1,18 @@
-.wapper
-  .user-body
-    = image_tag "user-session-logo.png", class: 'user-session-logo'
-    .account-page
-      .account-page__inner
-        .user-form
-          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-            .field
-              .field-label
-                = f.label :email
-              .field-input
-                = f.email_field :email, autofocus: true
-            .field
-              .field-label
-                = f.label :password
-                %i (英数字8文字以上)
-              .field-input
-                = f.password_field :password, autocomplete: "off"
-            .actions
-              = f.submit "ログイン", class: 'btn'
-        = render "devise/shared/links"
+.devise-session
+  = image_tag "devise-session-logo.png", class: 'devise-session__logo'
+  .user-form
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        .field__label
+          = f.label :email
+        .field__input
+          = f.email_field :email, autofocus: true
+      .field
+        .field__label
+          = f.label :password
+          %i (英数字8文字以上)
+        .field__input
+          = f.password_field :password, autocomplete: "off"
+      .actions
+        = f.submit "ログイン", class: 'btn'
+    = render "devise/shared/links"

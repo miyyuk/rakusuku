@@ -1,24 +1,22 @@
 .header
-  .logo-block
+  .header__left
     = link_to root_path do
-      = image_tag "logo.png", id: "logo"
-  .today
+      = image_tag "logo.png", class: "header__left__logo"
+  .header__middle
     - require "date"
     - d = Date.today
     = "#{ d.month }/#{ d.day } (#{ %w(日 月 火 水 木 金 土)[d.wday] })"
-  .user-session
-    .current_user-block
-      = link_to user_path(current_user), class: 'current_user-info' do
-        .current_user-avater.avater
+  .header__right
+    .current_user
+      = link_to user_path(current_user), class: 'current_user__info' do
+        .current_user__info--avater
           = image_tag current_user.avater.url, id: 'avater'
-        .current_user-name
+        .current_user__info--name
           = current_user.name
-    .user-path
-      .menu-icon
-        = link_to edit_user_path(current_user), class: 'user-menu' do
-          = icon('fa', 'user-cog')
-          %h5 編集
-      .menu-icon
-        = link_to destroy_user_session_path, method: :delete, class: 'user-menu' do
-          = icon('fa', 'sign-out-alt')
-          %h5 ログアウト
+    .user-links
+      = link_to edit_user_path(current_user), class: 'user-links__icon' do
+        = icon('fa', 'user-cog')
+        %h5 編集
+      = link_to destroy_user_session_path, method: :delete, class: 'user-links__icon' do
+        = icon('fa', 'sign-out-alt')
+        %h5 ログアウト
