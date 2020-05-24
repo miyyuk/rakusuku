@@ -1,14 +1,13 @@
-.wrapper
-  = render "layouts/header"
-  .body
-    .today-info
-      = icon('fa', 'thumbtack')
-      本日の予定
-      .infomations
-    .menu-list
-      .menu
-        .menu__block
-          = link_to groups_path, class: 'menu__block__icon' do
-            = icon('fa', 'users')
-        .menu__text
-          グループチャット
+= render "layouts/header"
+.body
+  .today-info
+    = icon('fa', 'thumbtack')
+    本日の予定
+    .information
+  .menu-list
+    .menu
+      .menu__block
+        = link_to groups_path, class: 'menu__block__icon' do
+          = icon('fa', 'users')
+      .menu__text
+        グループチャット

@@ -8,75 +8,8 @@ a {
   display: block;
 }
 
-.header {
-  background-color: #214d7f;
-  color: #fff;
-  height: 60px;
-  width: 100%;
-  padding: 0 10% 0 15%;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
-
-.body {
-  background-color: #f0f8ff;
-  height: 100vh;
-  width: 100%;
-  padding: 24px 15%;
-}
-
-.logo-block {
-  height: 60px;
-  width: 200px;
-}
-
-#logo {
-  height: 60px;
-  font-size: 0;
-}
-
-.today {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.user-session {
-  display: flex;
-
-  .current_user-block {
-    height: 60px;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    padding: 0 20px;
-    .current_user-info {
-      height: 60px;
-      display: flex;
-      align-items: center;
-      .current_user-name {
-        color: #fff;
-      }
-    }
-  }
-
-  .user-path {
-    display: flex;
-    .user-menu {
-      height: 60px;
-      width: 60px;
-      color: #fff;
-      font-size: 20px;
-      text-align: center;
-      padding-top: 12px;
-      h5 {
-        font-size: 1px;
-      }
-    }
-  }
-
-  .current_user-block:hover {
-    background-color: #1b629f;
-  }
+img {
+  object-fit: contain;
 }
 
 #avater {
@@ -86,46 +19,9 @@ a {
   border-radius: 5px;
 }
 
-.current_user-avater {
-  margin-top: 5px;
-}
-
-.today-info {
-
-  .infomations {
-    height: 300px;
-    margin: 10px 5px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-}
-
-
-.menu-list {
-  padding: 30px;
-  .menu {
-    width: 120px;
-    &__block {
-      height: 100px;
-      width: 100px;
-      background-color: #214d7f;
-      margin: 10px;
-      border-radius: 5px;
-      &__icon {
-        text-align: center;
-        line-height: 100px;
-        font-size: 60px;
-        color: #fff;
-      }
-    }
-    &__block:hover {
-      background-color: #1b629f;
-    }
-    &__text {
-      text-align: center;
-      font-size: 14px;
-      color: #214d7f;
-    }
-  }
+.body {
+  background-color: #eaf4fc;
+  height: calc(100vh - 60px);
+  width: 100%;
+  padding: 40px;
 }

@@ -8,9 +8,7 @@ $(function () {
       </div>
       <div class="comment">
         <div class="top">
-          <div class="top__left--user-avater">
-            <img src="${ comment.user_avater}" id="avater">
-          </div>
+          <img id="avater" src="${ comment.user_avater}">
           <div class="top__right">
             <div class="top__right--user-name">
               ${ comment.user_name}

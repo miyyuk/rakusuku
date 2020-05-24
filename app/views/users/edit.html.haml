@@ -1,35 +1,31 @@
-.wapper
-  = render "layouts/header"
-  .body
-    #account-page.account-page
-      .account-page__inner
-        .user-form
-          = form_for(current_user) do |f|
-            .field
-              .field-label
-                = f.label "プロフィール写真"
-              .field-input
-                = f.file_field :avater
-            .field
-              .field-label
-                = f.label "氏名"
-              .field-input
-                = f.text_field :firstname
-                = f.text_field :lastname
-            .field
-              .field-label
-                = f.label "メールアドレス"
-              .field-input
-                = f.email_field :email
-            .field
-              .field-label
-                = f.label "自己紹介文"
-              .field-input.text_area
-                = f.text_area :introduce
-            .field
-              .field-label
-                = f.label "時間割登録"
-              .field-input
-                = f.file_field :timetable, autofocus: true
-            .actions
-              = f.submit "更新する", class: 'btn'
+= render "layouts/header"
+.body
+  .user-form
+    = form_for(current_user) do |f|
+      .field
+        .field__label
+          = f.label "プロフィール写真"
+        .field__input
+          = f.file_field :avater
+      .field
+        .field__label
+          = f.label "氏名"
+        .field__input
+          = f.text_field :firstname
+          = f.text_field :lastname
+      .field
+        .field__label
+          = f.label "メールアドレス"
+        .field__input
+          = f.email_field :email
+      .field
+        .field__label
+          = f.label "自己紹介文"
+        .field__input
+          = f.text_area :introduce, class: 'field__input__textarea'
+      .field
+        .field__label
+          = f.label "時間割登録"
+        .field__input
+          = f.file_field :timetable, autofocus: true
+      = f.submit "更新する", class: 'btn'

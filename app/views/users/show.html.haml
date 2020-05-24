@@ -1,12 +1,11 @@
-.wrapper
-  = render "layouts/header"
-  .body
-    .timetable
-      - if current_user.timetable?
-        = image_tag current_user.timetable.url, class: 'timetable__image'
-      - else
-        = image_tag "default_timetable_image.png", class: 'timetable__image'
-    .profile
-      紹介文
-      .profile__introduce
-        = simple_format(current_user.introduce)
+= render "layouts/header"
+.body
+  .timetable
+    - if current_user.timetable?
+      = image_tag current_user.timetable.url, class: 'timetable__image'
+    - else
+      = image_tag "default_timetable_image.png", class: 'timetable__image'
+  .profile
+    紹介文
+    .profile__introduce
+      = simple_format(current_user.introduce)

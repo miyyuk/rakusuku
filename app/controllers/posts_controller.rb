@@ -5,7 +5,6 @@ class PostsController < ApplicationController
     @post = Post.new
     @post_file = @post.post_files.build
     @posts = @group.posts.includes(:user).order("created_at DESC")
-    # @post_files = @post.post_files.includes(:post)
     @looks = Look.new
   end
 

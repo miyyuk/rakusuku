@@ -1,0 +1,46 @@
+.top {
+  padding: 10px;
+  display: flex;
+  &__right {
+    &--user-name {
+      font-size: 14px;
+    }
+    &--datetime {
+      font-size: 6px;
+    }
+  }
+}
+
+.middle {
+  padding: 10px 10px 10px 50px;
+  .post-content {
+    margin-bottom: 10px;
+  }
+  .post-files {
+    display: flex;
+    margin-bottom: 10px;
+    &__file {
+      width: 150px;
+      height: 150px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+.bottom {
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+  .comment-link {
+    display: inline-block;
+    padding: 10px;
+    height: 40px;
+    width: 100%;
+    color: #007bbb;
+    align-items: center;
+    text-align: center;
+  }
+}
+.bottom:hover {
+  background-color: #c1e4e9;
+}

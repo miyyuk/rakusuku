@@ -22,7 +22,7 @@ $(function () {
     var html = `
     <div class="group-user" id="${id}">
       <p class="group-user__name">${name}</p>
-      <div class="user-search-remove group-user__btn group-user__btn--remove js-remove-btn" data-user-id="${id}" data-user-name="${name}">削除</div>
+      <div class="user-search-remove group-user__btn group-user__btn--remove" data-user-id="${id}" data-user-name="${name}">削除</div>
     </div>`;
     $(".js-add-user").append(html);
   }

@@ -1,0 +1,35 @@
+.post-form {
+  background-color: #f0f0f0;
+  padding: 15px;
+  margin: 0 24px;
+  display: flex;
+  .input-box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    &__content {
+      resize: vertical;
+      width: 100%;
+      min-height: 150px;
+      padding: 10px;
+    }
+    &__bottom {
+      display: flex;
+      justify-content: flex-end;
+      .submit-btn {
+        background-color: #dcdcdc;
+        height: 30px;
+        width: 100px;
+        padding: 0 30px;
+        margin-left: 20px;
+        color: #696969;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .submit-btn:hover {
+        background-color: #c1e4e9;
+      }
+    }
+  }
+}
