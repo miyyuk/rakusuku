@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: rakusuku_production
-  username: rakusuku
-  password: <%= ENV['RAKUSUKU_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  # database: rakusuku_production
+  # username: rakusuku
+  # password: <%= ENV['RAKUSUKU_DATABASE_PASSWORD'] %>
