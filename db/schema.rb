@@ -73,14 +73,14 @@ ActiveRecord::Schema.define(version: 2020_05_17_145553) do
     t.string "lastname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "avater", default: ""
+    t.string "avater"
     t.text "introduce"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "timetable", default: ""
+    t.string "timetable"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["firstname"], name: "index_users_on_firstname"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
