@@ -1,6 +1,6 @@
 = form_for group do |f|
   - if group.errors.any?
-    .errors
+    #error_explanation
       %h2= "#{group.errors.full_messages.count}件のエラーが発生しました。"
       %ul
         - group.errors.full_messages.each do |message|

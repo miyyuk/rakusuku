@@ -56,7 +56,7 @@ $(function () {
         }
       })
       .fail(function () {
-        alert("通信エラーです。ユーザーが表示できません。");
+        alert("ユーザー検索に失敗しました");
       });
   });
 
@@ -69,6 +69,7 @@ $(function () {
     addDeleteUser(userName, userId);
     addMember(userId);
   });
+
   $(document).on("click", ".group-user__btn--remove", function () {
     $(this)
       .parent()

@@ -1,5 +1,6 @@
 .devise-session
   = image_tag "devise-session-logo.png", class: 'devise-session__logo'
+  = devise_error_messages!
   .user-form
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       .field

@@ -25,3 +25,10 @@ img {
   width: 100%;
   padding: 40px;
 }
+
+.field_with_errors {
+  display: contents;
+  input {
+    border: 1px solid #ea352d;
+  }
+}

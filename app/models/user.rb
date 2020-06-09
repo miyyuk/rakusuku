@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
   def self.search(input, id)
     return nil if input == ""
-    User.where(['firstname LIKE ?', "%#{input}%"] ).where.not(id: id).limit(10)
+    User.where(['lastname LIKE? OR firstname LIKE?', "%#{input}%", "%#{input}%"] ).where.not(id: id).limit(10)
   end
 
   validates :firstname, presence: true
