@@ -1,5 +1,9 @@
 $(function () {
-  function buildHTML(post) {
+  function appendOption(file) {
+    var fileHTML = `<img class="post-files__file" src="${file.file.url}">`
+    return fileHTML;
+  }
+  function buildHTML(post, insertHTML) {
     var content = post.content.replace(/\n|\r\n|\r/g, '<br>');
     var html =
       `<div class="post">
@@ -18,7 +22,10 @@ $(function () {
           <div class="post-content">
             ${ content}
           </div>
-          <div class="look" id="look_${ post.id}">
+          <div class="post_files">
+            ${insertHTML}
+          </div>
+          <div class="look" id="look_${post.id}">
             <div class="looked-count">
               <i class="fa fa-check"></i>
               0 人
@@ -58,13 +65,20 @@ $(function () {
       contentType: false
     })
       .done(function (data) {
-        var html = buildHTML(data);
+        var insertHTML = '';
+        if (data.post_files != 0) {
+          data.post_files.forEach(function (file) {
+            insertHTML += appendOption(file);
+          })
+        }
+        var html = buildHTML(data, insertHTML);
         $('.posts').prepend(html);
         $('form')[0].reset();
         $('.submit-btn').prop('disabled', false);
       })
       .fail(function () {
-        alert("投稿に失敗しました");
+        alert("投稿に失敗しました\n投稿文は入力しましたか？");
+        $('.submit-btn').prop('disabled', false);
       })
   });
 });
