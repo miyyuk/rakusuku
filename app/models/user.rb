@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :looked_posts, through: :looks, source: :post
 
   def name
-    "#{self.firstname} #{self.lastname}"
+    "#{self.lastname} #{self.firstname}"
   end
 
   def already_looked?(post)

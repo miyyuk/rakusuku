@@ -1,18 +1,19 @@
 .timetable {
-  width: 900px;
+  width: 840px;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
   margin: 0 auto;
   &__image {
-    width: 100%;
-    height: 100%;
+    width: 800px;
+    height: 480px;
+    object-fit: contain;
   }
 }
 
 .profile {
-  width: 900px;
-  margin: 30px auto;
+  width: 840px;
+  margin: 24px auto 10px;
   &__introduce {
     background-color: #fff;
     padding: 10px;
