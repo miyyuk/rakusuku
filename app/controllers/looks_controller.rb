@@ -3,15 +3,13 @@ class LooksController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    look = current_user.looks.create(post_id: params[:post_id])
-    redirect_to group_posts_path(group_id: @group.id)
+    @look = current_user.looks.create(post_id: params[:post_id])
   end
 
   def destroy
     @post = Post.find(params[:post_id])
-    look = Look.find_by(post_id: params[:post_id], user_id: current_user.id)
-    look.destroy
-    redirect_to group_posts_path(group_id: @group.id)
+    @look = Look.find_by(post_id: params[:post_id], user_id: current_user.id)
+    @look.destroy
   end
 
   private

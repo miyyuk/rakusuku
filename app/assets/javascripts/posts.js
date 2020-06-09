@@ -18,14 +18,12 @@ $(function () {
           <div class="post-content">
             ${ content}
           </div>
-          <div class="look">
+          <div class="look" id="look_${ post.id}">
             <div class="looked-count">
               <i class="fa fa-check"></i>
               0 人
             </div>
-            <div class="look-btn">
-              <form class="button_to" method="post" action="${ post.looks_link}" data-remote="true"><input id="look-btn#{post.id}" type="submit" value="見ました"></form>
-            </div>
+            <a class="look-btn" data-remote="true" rel="nofollow" data-method="post" href="${ post.looks_link}">見ました</a>
           </div>
         </div>
         <div class="bottom">

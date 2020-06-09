@@ -1,3 +1,4 @@
+json.id               @post.id
 json.user_avater      @post.user.avater_url
 json.user_name        @post.user.name
 json.created_at       @post.created_at.strftime("%Y/%m/%d %H:%M")
