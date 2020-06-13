@@ -26,7 +26,7 @@
       .js-add-user
 
       - group.users.each do |user|
-        - if current_user.name != user.name
+        - if current_user != user
           .group-user
             %input{ name: "group[user_ids][]", type: "hidden", value: user.id, class: "already-added-user" }
               %p.group-user__name
