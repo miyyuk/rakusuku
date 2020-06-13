@@ -1,4 +1,13 @@
 ja:
+  date:
+    formats:
+      default: "%Y/%m/%d(%a)"
+      datetime: "%Y/%m/%d %H:%M"
+      short: "%m/%d(%a)"
+  time:
+    formats:
+      default: "%Y/%m/%d(%a)"
+      datetime: "%Y/%m/%d %H:%M"
   activerecord:
     models:
       group: グループ

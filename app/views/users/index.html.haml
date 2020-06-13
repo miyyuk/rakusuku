@@ -2,8 +2,16 @@
 .body
   .today-info
     = icon('fa', 'thumbtack')
-    本日の予定
+    登録された予定
     .information
+      - @posts.each do |post|
+        .release_post
+          .release_post__date
+            = l post.release_date
+            ▶︎
+          .release_post__content
+            = link_to group_post_path(post.group.id, post) do
+              = post.content.truncate(45)
   .menu-list
     .menu
       .menu__block

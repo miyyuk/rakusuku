@@ -16,7 +16,13 @@
     }
     &__bottom {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
+      &__release {
+        &__date {
+          margin: 0 4px;
+          display: none;
+        }
+      }
       .submit-btn {
         background-color: #dcdcdc;
         height: 30px;
@@ -32,4 +38,10 @@
       }
     }
   }
+}
+
+#post_release_check {
+  height: 16px;
+  width: 16px;
+  margin: 4px;
 }

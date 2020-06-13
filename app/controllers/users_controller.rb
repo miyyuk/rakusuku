@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def index
+    @post_releases = Post.release_post
+    @posts = @post_releases.where(group_id: current_user.groups.ids).limit(6)
     @users = User.search(params[:keyword], current_user.id)
     respond_to do |format|
       format.html

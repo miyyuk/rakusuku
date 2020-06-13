@@ -2,12 +2,24 @@
   padding: 10px;
   display: flex;
   &__right {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__userinfo {
     &--user-name {
       font-size: 14px;
     }
     &--datetime {
       font-size: 6px;
     }
+  }
+  &__release {
+    background-color: #eee;
+    font-size: 12px;
+    border: 1px solid #dc143c;
+    border-radius: 2px;
+    padding: 4px 8px;
   }
 }
 
@@ -18,12 +30,15 @@
   }
   .post-files {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-bottom: 10px;
     &__file {
       width: 150px;
       height: 150px;
-      margin-right: 10px;
+      margin: 5px;
       border: 1px solid #ccc;
+      object-fit: contain;
     }
   }
 }
