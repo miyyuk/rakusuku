@@ -52,7 +52,7 @@ $(function () {
         var html = buildHTML(data);
         $('.comments__count').remove();
         $('.comments').prepend(html);
-        $('form')[1].reset();
+        $('form')[0].reset();
         $('.submit-btn').prop('disabled', false);
       })
       .fail(function () {

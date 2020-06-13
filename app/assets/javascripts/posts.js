@@ -1,21 +1,24 @@
 $(function () {
-  function appendOption(file) {
-    var fileHTML = `<img class="post-files__file" src="${file.file.url}">`
+  function appendHTML(file) {
+    var fileHTML = `<object class="post-files__file" data="${file.file.url}"></object>`
     return fileHTML;
   }
-  function buildHTML(post, insertHTML) {
+  function buildHTML(post, releaseHTML, filesHTML) {
     var content = post.content.replace(/\n|\r\n|\r/g, '<br>');
     var html =
       `<div class="post">
         <div class="top">
           <img id="avater" src="${ post.user_avater}">
           <div class="top__right">
-            <div class="top__right--user-name">
-              ${ post.user_name}
+            <div class="top__userinfo">
+              <div class="top__userinfo--user-name">
+                ${ post.user_name}
+              </div>
+              <div class="top__userinfo--datetime">
+                ${ post.created_at}
+              </div>
             </div>
-            <div class="top__right--datetime">
-              ${ post.created_at}
-            </div>
+            ${releaseHTML}
           </div>
         </div>
         <div class="middle">
@@ -23,7 +26,7 @@ $(function () {
             ${ content}
           </div>
           <div class="post_files">
-            ${insertHTML}
+            ${filesHTML}
           </div>
           <div class="look" id="look_${post.id}">
             <div class="looked-count">
@@ -52,6 +55,10 @@ $(function () {
       }
     });
 
+  $('#release_check').on('change', function () {
+    $('#release_date').slideToggle();
+  });
+
   $('#new_post').on('submit', function (e) {
     e.preventDefault()
     var formData = new FormData(this);
@@ -65,19 +72,31 @@ $(function () {
       contentType: false
     })
       .done(function (data) {
-        var insertHTML = '';
+        if (data.release_check != 0) {
+          var releaseHTML =
+            `<div class="top__release">
+              <div class="top__release--date">
+                予定に登録されています
+                <br>
+                ${data.release_date}
+              </div>
+            </div>`
+        } else {
+          var releaseHTML = ``
+        }
+        var filesHTML = '';
         if (data.post_files != 0) {
           data.post_files.forEach(function (file) {
-            insertHTML += appendOption(file);
+            filesHTML += appendHTML(file);
           })
         }
-        var html = buildHTML(data, insertHTML);
+        var html = buildHTML(data, releaseHTML, filesHTML);
         $('.posts').prepend(html);
         $('form')[0].reset();
         $('.submit-btn').prop('disabled', false);
       })
       .fail(function () {
-        alert("投稿に失敗しました\n投稿文は入力しましたか？");
+        alert("投稿に失敗しました\nリロードしてください\n▶︎投稿文は入力しましたか？\n▶︎予定に登録している場合日付を指定しましたか？");
         $('.submit-btn').prop('disabled', false);
       })
   });
