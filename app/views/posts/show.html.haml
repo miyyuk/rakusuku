@@ -46,10 +46,11 @@
             .top
               = image_tag comment.user.avater.url, id: 'avater'
               .top__right
-                .top__right--user-name
-                  = comment.user.name
-                .top__right--datetime
-                  = l comment.created_at format: :datetime
+                .top__userinfo
+                  .top__userinfo--user-name
+                    = comment.user.name
+                  .top__userinfo--datetime
+                    = l comment.created_at, format: :datetime
             .middle
               .post-content
                 = simple_format(comment.content)

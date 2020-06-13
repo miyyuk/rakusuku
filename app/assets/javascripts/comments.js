@@ -10,11 +10,13 @@ $(function () {
         <div class="top">
           <img id="avater" src="${ comment.user_avater}">
           <div class="top__right">
-            <div class="top__right--user-name">
-              ${ comment.user_name}
-            </div>
-            <div class="top__right--datetime">
-              ${ comment.created_at}
+            <div class="top__userinfo">
+              <div class="top__userinfo--user-name">
+                ${ comment.user_name}
+              </div>
+              <div class="top__userinfo--datetime">
+                ${ comment.created_at}
+              </div>
             </div>
           </div>
         </div>
