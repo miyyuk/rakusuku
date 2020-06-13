@@ -2,17 +2,24 @@
   .top
     = image_tag post.user.avater.url, id: 'avater'
     .top__right
-      .top__right--user-name
-        = post.user.name
-      .top__right--datetime
-        = post.created_at.strftime("%Y/%m/%d %H:%M")
+      .top__userinfo
+        .top__userinfo--user-name
+          = post.user.name
+        .top__userinfo--datetime
+          = l post.created_at, format: :datetime
+      - if post.release_check?
+        .top__release
+          .top__release--date
+            予定に登録されています
+            %br
+            = l post.release_date
   .middle
     .post-content
       = simple_format(post.content)
     - if post.post_files.present?
       .post-files
         - post.post_files.each do |file|
-          = image_tag file.file.url, class: 'post-files__file'
+          %object{data: file.file.url, class: 'post-files__file'}
     = render partial: 'looks/look', locals: { post: post }
   .bottom
     = link_to group_post_path(@group, post), class: 'comment-link' do

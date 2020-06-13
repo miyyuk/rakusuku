@@ -3,9 +3,7 @@
     = link_to root_path do
       = image_tag "logo.png", class: "header__left__logo"
   .header__middle
-    - require "date"
-    - d = Date.today
-    = "#{ d.month }/#{ d.day } (#{ %w(日 月 火 水 木 金 土)[d.wday] })"
+    = l Date.today, format: :short
   .header__right
     .current_user
       = link_to user_path(current_user), class: 'current_user__info' do
