@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :correct_user
+
   def index
     @groups = current_user.groups.order(name: "ASC")
   end
@@ -39,5 +41,11 @@ class GroupsController < ApplicationController
   private
   def group_params
     params.require(:group).permit(:name, user_ids: [])
+  end
+
+  def correct_user
+    if request.referer.nil?
+      redirect_to root_path
+    end
   end
 end

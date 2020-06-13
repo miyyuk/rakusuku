@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :correct_user
   before_action :set_post
 
   def create
@@ -20,5 +21,11 @@ class CommentsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:post_id])
+  end
+
+  def correct_user
+    if request.referer.nil?
+      redirect_to root_path
+    end
   end
 end

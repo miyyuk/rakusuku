@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :correct_user
   before_action :set_group
 
   def index
@@ -39,5 +40,11 @@ class PostsController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
+  end
+
+  def correct_user
+    if request.referer.nil?
+      redirect_to root_path
+    end
   end
 end
