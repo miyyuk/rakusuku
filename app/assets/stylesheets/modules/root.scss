@@ -22,7 +22,7 @@ img {
 
 .body {
   background-color: #eaf4fc;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   width: 100%;
   padding: 40px;
 }

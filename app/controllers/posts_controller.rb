@@ -18,19 +18,19 @@ class PostsController < ApplicationController
 
   def create
     @post = @group.posts.new(post_params)
-      if @post.save
-        if params[:post_files].present?
-          params[:post_files][:file].each do |a|
-            @post_file = @post.post_files.create!(file: a, post_id: @post.id)
-          end
+    if @post.save
+      if params[:post_files].present?
+        params[:post_files][:file].each do |a|
+          @post_file = @post.post_files.create!(file: a, post_id: @post.id)
         end
-        respond_to do |format|
-          format.json
-        end
-      else
-        @posts = @group.posts.includes(:user).order(created_at: "DESC")
-        render :index
       end
+      respond_to do |format|
+        format.json
+      end
+    else
+      @posts = @group.posts.includes(:user).order(created_at: "DESC")
+      render :index
+    end
   end
 
   private
