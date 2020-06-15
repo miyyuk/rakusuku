@@ -1,7 +1,7 @@
 <img width="324" alt="rakusuku_logo_white" src="https://user-images.githubusercontent.com/63996160/84614087-fc3d7100-aeff-11ea-8b30-8a7380ddb2e4.png">
 
 # Overview
-This is a group chat application used in places of education.
+This is a group chat application used in places of education.  
 It was created with reference to an educational platform called "Classi".
 ▶︎[Classi（クラッシー） - 学校教育のICT活用を支援するクラウドサービス](https://classi.jp/)
 
@@ -17,7 +17,8 @@ You can
 - Comment on message
 - Tell others that you "looked" the message
 - Register message as schedule
-  - You can register as a schedule when posting a message. The registered schedule is reminded in the top page.
+  - You can register as a schedule when posting a message.
+  - The registered schedule is reminded in the top page.
 
 More detail ▶︎ https://qiita.com/miyyuk/private/46eda302fe6b5b8aadbd
 
@@ -25,7 +26,7 @@ More detail ▶︎ https://qiita.com/miyyuk/private/46eda302fe6b5b8aadbd
 ![ezgif com-video-to-gif (10)](https://user-images.githubusercontent.com/63996160/84614126-1d9e5d00-af00-11ea-85bf-a55b59f55d4c.gif)
 
 # App URL
-####**https://rakusuku.herokuapp.com/**
+####**https://rakusuku.herokuapp.com/**  
 ※Please click the submit button only once.
 
 # Usage
