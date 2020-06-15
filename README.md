@@ -3,7 +3,7 @@
 # Overview
 This is a group chat application used in places of education.  
 It was created with reference to an educational platform called "Classi".  
-▶︎[Classi（クラッシー） - 学校教育のICT活用を支援するクラウドサービス](https://classi.jp/)
+▶︎ [Classi（クラッシー） - 学校教育のICT活用を支援するクラウドサービス](https://classi.jp/)
 
 
 # Description
@@ -26,8 +26,7 @@ More detail ▶︎ https://qiita.com/miyyuk/private/46eda302fe6b5b8aadbd
 ![ezgif com-video-to-gif (10)](https://user-images.githubusercontent.com/63996160/84614126-1d9e5d00-af00-11ea-85bf-a55b59f55d4c.gif)
 
 # App URL
-####**https://rakusuku.herokuapp.com/**
-  
+**https://rakusuku.herokuapp.com/**  
 ※Please click the submit button only once.
 
 # Usage
